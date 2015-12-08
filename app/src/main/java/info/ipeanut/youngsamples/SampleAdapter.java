@@ -14,7 +14,7 @@ import java.util.List;
  * Created by chenshao on 15/12/6.
  */
 
-class SampleAdapter extends BaseAdapter {
+public class SampleAdapter extends BaseAdapter {
     Context context;
     private List<SampleBean> mItems;
 

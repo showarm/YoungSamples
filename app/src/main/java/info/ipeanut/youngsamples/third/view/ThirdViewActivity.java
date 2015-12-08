@@ -1,4 +1,4 @@
-package info.ipeanut.youngsamples;
+package info.ipeanut.youngsamples.third.view;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -9,26 +9,24 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.ipeanut.youngsamples.supportappnavigation.AppNavHomeActivity;
-import info.ipeanut.youngsamples.supportv4.SupportFourDemos;
-import info.ipeanut.youngsamples.third.view.ThirdViewActivity;
+import info.ipeanut.youngsamples.SampleAdapter;
+import info.ipeanut.youngsamples.SampleBean;
+import info.ipeanut.youngsamples.third.view.mtextview.MTextViewActivity;
 
-public class MainActivity extends ListActivity {
+/**
+ * Created by chenshaosina on 15/12/8.
+ */
+public class ThirdViewActivity extends ListActivity {
 
     private static String[] names = {
-            "Support4Demos",
-            "SupportAppNavigation",
-            "ThirdView"
+            "解决TextView乱换行并支持图文混排",
 
     };
     private static Class[] cls = {
-            SupportFourDemos.class,
-            AppNavHomeActivity.class,
-            ThirdViewActivity.class
+            MTextViewActivity.class,
 
     };
     private List<SampleBean> samples = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
