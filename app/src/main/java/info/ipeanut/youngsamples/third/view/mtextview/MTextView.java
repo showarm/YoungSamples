@@ -25,7 +25,7 @@ import java.util.HashMap;
 
 /**
  * @author huangwei
- *
+ *https://github.com/yellowcath/MTextView
  * @功能  解决android5.0以下TextView乱换行的问题，并支持图文混排，请使用{@link #setMText(CharSequence)}
  * @2014年5月27日
  * @下午5:29:27
