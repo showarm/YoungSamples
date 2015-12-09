@@ -552,6 +552,7 @@
         <activity android:name=".third.view.ThirdViewActivity" />
         <activity android:name=".third.view.mtextview.MTextViewActivity" />
         <activity android:name=".third.view.percentProgressView.PercentProgressActivity" />
+        <activity android:name=".third.view.rollingTextView.RollingActivity" />
 
 
     </application>
