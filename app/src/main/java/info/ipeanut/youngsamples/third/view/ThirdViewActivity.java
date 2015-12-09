@@ -12,6 +12,7 @@ import java.util.List;
 import info.ipeanut.youngsamples.SampleAdapter;
 import info.ipeanut.youngsamples.SampleBean;
 import info.ipeanut.youngsamples.third.view.mtextview.MTextViewActivity;
+import info.ipeanut.youngsamples.third.view.percentProgressView.PercentProgressActivity;
 
 /**
  * Created by chenshaosina on 15/12/8.
@@ -20,10 +21,12 @@ public class ThirdViewActivity extends ListActivity {
 
     private static String[] names = {
             "解决TextView乱换行并支持图文混排",
+            "百分比环形进度条"
 
     };
     private static Class[] cls = {
             MTextViewActivity.class,
+            PercentProgressActivity.class
 
     };
     private List<SampleBean> samples = null;

@@ -22,4 +22,18 @@
         <attr name="android:label" />
     </declare-styleable>
 
+    <declare-styleable name="PercentProgressView">
+
+        <attr name="radius" format="dimension"/>
+        <attr name="strokeWidth" format="dimension"/>
+        <attr name="circleColor" format="color"/>
+        <attr name="ringColor" format="color"/>
+        <attr name="notBeginImg" format="string"/>
+        <attr name="waitImg" format="string"/>
+        <attr name="pausedImg" format="string"/>
+        <attr name="finishedImg" format="string"/>
+
+    </declare-styleable>
+
+
 </resources>
