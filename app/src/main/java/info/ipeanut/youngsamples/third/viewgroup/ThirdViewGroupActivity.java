@@ -1,4 +1,4 @@
-package info.ipeanut.youngsamples;
+package info.ipeanut.youngsamples.third.viewgroup;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -9,29 +9,24 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.ipeanut.youngsamples.supportappnavigation.AppNavHomeActivity;
-import info.ipeanut.youngsamples.supportv4.SupportFourDemos;
-import info.ipeanut.youngsamples.third.view.ThirdViewActivity;
-import info.ipeanut.youngsamples.third.viewgroup.ThirdViewGroupActivity;
+import info.ipeanut.youngsamples.SampleAdapter;
+import info.ipeanut.youngsamples.SampleBean;
+import info.ipeanut.youngsamples.third.viewgroup.directionalViewPager.activity.DirectionalActivity;
 
-public class MainActivity extends ListActivity {
+/**
+ * Created by chenshaosina on 15/12/8.
+ */
+public class ThirdViewGroupActivity extends ListActivity {
 
     private static String[] names = {
-            "Support4Demos",
-            "SupportAppNavigation",
-            "ThirdView",
-            "ThirdViewGroup"
+            "横向竖向ViewPager"
 
     };
     private static Class[] cls = {
-            SupportFourDemos.class,
-            AppNavHomeActivity.class,
-            ThirdViewActivity.class,
-            ThirdViewGroupActivity.class
+            DirectionalActivity.class
 
     };
     private List<SampleBean> samples = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

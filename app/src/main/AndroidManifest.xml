@@ -555,6 +555,11 @@
         <activity android:name=".third.view.rollingTextView.RollingActivity" />
 
 
+        <!--  ThirdViewGroupActivity -->
+        <activity android:name=".third.viewgroup.ThirdViewGroupActivity" />
+        <activity android:name=".third.viewgroup.directionalViewPager.activity.DirectionalActivity" />
+
+
     </application>
 
 
