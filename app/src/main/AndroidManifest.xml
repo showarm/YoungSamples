@@ -559,8 +559,11 @@
 
         <!-- ThirdViewGroupActivity -->
         <activity android:name=".third.ownview.ThirdOwnViewActivity" />
-        <activity android:name=".third.ownview.basepage.BasePageActivity"
-            android:theme="@style/Base.Theme.AppCompat.Light"/>
+        <activity
+            android:name=".third.ownview.basepage.BasePageActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light" />
+        <activity android:name=".third.ownview.baseSliderView.BaseSliderActivity" >
+        </activity>
     </application>
 
 </manifest>

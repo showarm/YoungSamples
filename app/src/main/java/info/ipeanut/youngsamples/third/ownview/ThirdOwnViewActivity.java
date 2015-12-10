@@ -11,6 +11,7 @@ import java.util.List;
 
 import info.ipeanut.youngsamples.SampleAdapter;
 import info.ipeanut.youngsamples.SampleBean;
+import info.ipeanut.youngsamples.third.ownview.baseSliderView.BaseSliderActivity;
 import info.ipeanut.youngsamples.third.ownview.basepage.BasePageActivity;
 
 /**
@@ -19,11 +20,13 @@ import info.ipeanut.youngsamples.third.ownview.basepage.BasePageActivity;
 public class ThirdOwnViewActivity extends ListActivity {
 
     private static String[] names = {
-            "BasePage"
+            "BasePage",
+            "BaseSliderView"
 
     };
     private static Class[] cls = {
-            BasePageActivity.class
+            BasePageActivity.class,
+            BaseSliderActivity.class
 
     };
     private List<SampleBean> samples = null;
