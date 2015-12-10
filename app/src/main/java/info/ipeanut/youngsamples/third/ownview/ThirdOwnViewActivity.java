@@ -1,4 +1,4 @@
-package info.ipeanut.youngsamples;
+package info.ipeanut.youngsamples.third.ownview;
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -9,32 +9,24 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import info.ipeanut.youngsamples.supportappnavigation.AppNavHomeActivity;
-import info.ipeanut.youngsamples.supportv4.SupportFourDemos;
-import info.ipeanut.youngsamples.third.ownview.ThirdOwnViewActivity;
-import info.ipeanut.youngsamples.third.view.ThirdViewActivity;
-import info.ipeanut.youngsamples.third.viewgroup.ThirdViewGroupActivity;
+import info.ipeanut.youngsamples.SampleAdapter;
+import info.ipeanut.youngsamples.SampleBean;
+import info.ipeanut.youngsamples.third.ownview.basepage.BasePageActivity;
 
-public class MainActivity extends ListActivity {
+/**
+ * Created by chenshaosina on 15/12/8.
+ */
+public class ThirdOwnViewActivity extends ListActivity {
 
     private static String[] names = {
-            "Support4Demos",
-            "SupportAppNavigation",
-            "ThirdView",
-            "ThirdViewGroup",
-            "ThirdOwnView"
+            "BasePage"
 
     };
     private static Class[] cls = {
-            SupportFourDemos.class,
-            AppNavHomeActivity.class,
-            ThirdViewActivity.class,
-            ThirdViewGroupActivity.class,
-            ThirdOwnViewActivity.class
+            BasePageActivity.class
 
     };
     private List<SampleBean> samples = null;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
