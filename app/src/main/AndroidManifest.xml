@@ -537,15 +537,15 @@
                 android:resource="@xml/my_paths" />
         </provider>
 
-        <activity
-            android:name="supportv4.media.TransportControllerActivity"
-            android:label="@string/sample_transport_controller_activity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <!--<activity-->
+            <!--android:name="supportv4.media.TransportControllerActivity"-->
+            <!--android:label="@string/sample_transport_controller_activity" >-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="com.example.android.supportv4.SUPPORT4_SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
+                <!--<category android:name="com.example.android.supportv4.SUPPORT4_SAMPLE_CODE" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
 
         <!-- ThirdViewActivity -->
         <activity android:name=".third.view.ThirdViewActivity" />
@@ -564,6 +564,8 @@
             android:theme="@style/Base.Theme.AppCompat.Light" />
         <activity android:name=".third.ownview.baseSliderView.BaseSliderActivity" >
         </activity>
+      <activity android:name=".recyclerview.windowimageview.WivDemoActivity" />
+        <activity android:name=".recyclerview.RecyclerViewActivity" />
     </application>
 
 </manifest>
