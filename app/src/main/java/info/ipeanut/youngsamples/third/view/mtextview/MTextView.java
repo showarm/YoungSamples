@@ -16,7 +16,7 @@ import android.text.style.DynamicDrawableSpan;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.widget.TextView;
-
+import info.ipeanut.youngsamples.Utils;
 import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -118,23 +118,10 @@ public class MTextView extends TextView {
     public void init(Context context) {
         this.context = context;
         paint.setAntiAlias(true);
-        lineSpacing = dip2px(context, lineSpacingDP);
-        minHeight = dip2px(context, 30);
+        lineSpacing = Utils.dip2px( lineSpacingDP);
+        minHeight = Utils.dip2px(30);
 
         displayMetrics = new DisplayMetrics();
-    }
-
-    public static int px2sp(Context context, float pxValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
-        return (int) (pxValue / fontScale + 0.5f);
-    }
-
-    /**
-     * 根据手机的分辨率从 dp 的单位 转成为 px(像素)
-     */
-    public static int dip2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
-        return (int) (dpValue * scale + 0.5f);
     }
 
     @Override
@@ -602,11 +589,11 @@ public class MTextView extends TextView {
      */
     public void setLineSpacingDP(int lineSpacingDP) {
         this.lineSpacingDP = lineSpacingDP;
-        lineSpacing = dip2px(context, lineSpacingDP);
+        lineSpacing = Utils.dip2px(lineSpacingDP);
     }
 
     public void setParagraphSpacingDP(int paragraphSpacingDP) {
-        paragraphSpacing = dip2px(context, paragraphSpacingDP);
+        paragraphSpacing = Utils.dip2px( paragraphSpacingDP);
     }
 
     /**

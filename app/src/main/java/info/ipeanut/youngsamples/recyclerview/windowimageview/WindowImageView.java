@@ -11,6 +11,7 @@ import android.support.annotation.DrawableRes;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import info.ipeanut.youngsamples.R;
 
@@ -96,6 +97,11 @@ public class WindowImageView extends View {
       disPlayTop = mMimDisPlayTop;
     }
   }
+
+  /**
+   * 计算系数，  translationMultiple 滑动时✖️的一个系数，是图片未显示的高度/item未滑到的高度
+   * @param scaledHeight bitmap的高度
+   */
   private void resetTransMultiple(int scaledHeight) {
     if (recyclerView != null) {
             /*
@@ -140,6 +146,7 @@ public class WindowImageView extends View {
 
   }
 
+  //int tem = 0;
   @Override public void draw(Canvas canvas) {
     super.draw(canvas);
 
@@ -151,10 +158,15 @@ public class WindowImageView extends View {
           return;
         }
       }
+
       canvas.save();
-      canvas.translate(0,disPlayTop); // 画布下移
+      canvas.translate(0,disPlayTop);
       drawable.setBounds(0,0,getWidth(),rescaleHeight);
       drawable.draw(canvas);
+      // 如果没有translate，画布画的是drawable(0,0)开始的bounds部分，也就是最上面的。
+      // translate时,disPlayTop一直是负值，translate的参数是dx,dy，
+      // 图片保持不动，dy<0，画布向下，，dy>0，画布向上，
+      // 从下往上滑，disPlayTop < 0 且递增，也就是从 -bitmap.getHeight()到0，所以从底部到顶部展示图片。
 
       canvas.restore();
     }
@@ -173,6 +185,8 @@ public class WindowImageView extends View {
 
   private RecyclerView recyclerView;
   private RecyclerView.OnScrollListener rvScrollListener;
+
+  /** 滑动时✖️的一个系数，是图片未显示的高度/item未滑到的高度  **/
   private float translationMultiple = 1.0f;
   private int[] rvLocation;
   private int rvHeight;
@@ -193,9 +207,14 @@ public class WindowImageView extends View {
 
       @Override public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
         super.onScrolled(recyclerView, dx, dy);
+
+        // 当前item，也就是windowImageView可见
         if (getTopDistance() > 0 && getTopDistance() + getHeight() < rvHeight) {
           disPlayTop += dy * translationMultiple;
           boundTop();
+
+          Log.e("onScrolled",dx + " == " + dy + " == "+disPlayTop+ " == "+translationMultiple);
+
           if (isMeasured) {
             invalidate();
           }

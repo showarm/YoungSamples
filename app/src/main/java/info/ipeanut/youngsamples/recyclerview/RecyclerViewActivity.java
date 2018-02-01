@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ListView;
 import info.ipeanut.youngsamples.SampleAdapter;
 import info.ipeanut.youngsamples.SampleBean;
+import info.ipeanut.youngsamples.recyclerview.Gallery.GalleryRecyclerActivity;
 import info.ipeanut.youngsamples.recyclerview.windowimageview.WivDemoActivity;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +19,12 @@ public class RecyclerViewActivity extends ListActivity {
 
     private static String[] names = {
             "windowimageview",
+            "GalleryRecyclerView",
 
     };
     private static Class[] cls = {
             WivDemoActivity.class,
+        GalleryRecyclerActivity.class,
     };
     private List<SampleBean> samples = null;
 

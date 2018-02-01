@@ -1,0 +1,93 @@
+package info.ipeanut.youngsamples.recyclerview.Gallery;
+
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.View;
+
+/**
+ * 创建时间: 2018/02/01 16:39 <br>
+ * 作者: chenshao <br>
+ * 描述:
+ */
+public class AnimManager {
+
+  private static AnimManager INSTANCE;
+
+  public static final int ANIM_BOTTOM_TO_TOP = 0;
+  public static final int ANIM_TOP_TO_BOTTOM = 1;
+
+  private int mAnimType = ANIM_BOTTOM_TO_TOP; //动画类型
+  private float mAnimFactor = 0.2f;   //变化因子
+
+  public static AnimManager getInstance() {
+    if (INSTANCE == null) {
+      INSTANCE = new AnimManager();
+    }
+    return INSTANCE;
+  }
+
+  public void setmAnimFactor(float mAnimFactor) {
+    this.mAnimFactor = mAnimFactor;
+  }
+
+  public void setmAnimType(int mAnimType) {
+    this.mAnimType = mAnimType;
+  }
+
+  public void setAnimation(RecyclerView recyclerView, int position, float percent) {
+    //switch (mAnimType) {
+    //  case ANIM_BOTTOM_TO_TOP:
+        setBottomToTopAnim(recyclerView, position, percent);
+    //    break;
+    //  case ANIM_TOP_TO_BOTTOM:
+    //    setTopToBottomAnim(recyclerView, position, percent);
+    //    break;
+    //  default:
+    //    setBottomToTopAnim(recyclerView, position, percent);
+    //    break;
+    //}
+  }
+
+
+  private void setBottomToTopAnim(RecyclerView recyclerView, int position, float percent) {
+    View mCurView = recyclerView.getLayoutManager().findViewByPosition(position);       // 中间页
+    View mRightView = recyclerView.getLayoutManager().findViewByPosition(position + 1); // 左边页
+    View mLeftView = recyclerView.getLayoutManager().findViewByPosition(position - 1);  // 右边页
+
+
+    if (percent <= 0.5) {
+      if (mLeftView != null) {
+        Log.d("TAG", "mLeftView=" + ((1 - mAnimFactor) + percent * mAnimFactor) + "; position=" + position);
+        mLeftView.setScaleX((1 - mAnimFactor) + percent * mAnimFactor);
+        mLeftView.setScaleY((1 - mAnimFactor) + percent * mAnimFactor);
+      }
+      if (mCurView != null) {
+        Log.d("TAG", "mCurView=" + (1 - percent * mAnimFactor) + "; position=" + position);
+        mCurView.setScaleX(1 - percent * mAnimFactor);
+        mCurView.setScaleY(1 - percent * mAnimFactor);
+      }
+      if (mRightView != null) {
+        Log.d("TAG", "mRightView=" + ((1 - mAnimFactor) + percent * mAnimFactor) + "; position=" + position);
+        mRightView.setScaleX((1 - mAnimFactor) + percent * mAnimFactor);
+        mRightView.setScaleY((1 - mAnimFactor) + percent * mAnimFactor);
+      }
+    } else {
+      if (mLeftView != null) {
+        Log.d("TAG", "mLeftView=" + (1 - percent * mAnimFactor) + "; position=" + position);
+        mLeftView.setScaleX(1 - percent * mAnimFactor);
+        mLeftView.setScaleY(1 - percent * mAnimFactor);
+      }
+      if (mCurView != null) {
+        Log.d("TAG", "mCurView=" + ((1 - mAnimFactor) + percent * mAnimFactor) + "; position=" + position);
+        mCurView.setScaleX((1 - mAnimFactor) + percent * mAnimFactor);
+        mCurView.setScaleY((1 - mAnimFactor) + percent * mAnimFactor);
+      }
+      if (mRightView != null) {
+        Log.d("TAG", "mRightView=" + (1 - percent * mAnimFactor) + "; position=" + position);
+        mRightView.setScaleX(1 - percent * mAnimFactor);
+        mRightView.setScaleY(1 - percent * mAnimFactor);
+      }
+    }
+  }
+
+}
