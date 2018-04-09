@@ -8,6 +8,7 @@ import android.widget.ListView;
 import info.ipeanut.youngsamples.SampleAdapter;
 import info.ipeanut.youngsamples.SampleBean;
 import info.ipeanut.youngsamples.recyclerview.Gallery.GalleryRecyclerActivity;
+import info.ipeanut.youngsamples.recyclerview.swipecard.demo.SwipeCardActivity;
 import info.ipeanut.youngsamples.recyclerview.windowimageview.WivDemoActivity;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +21,13 @@ public class RecyclerViewActivity extends ListActivity {
     private static String[] names = {
             "windowimageview",
             "GalleryRecyclerView",
+            "SwipeCard",
 
     };
     private static Class[] cls = {
             WivDemoActivity.class,
         GalleryRecyclerActivity.class,
+        SwipeCardActivity.class,
     };
     private List<SampleBean> samples = null;
 

@@ -568,6 +568,7 @@
         <activity android:name=".recyclerview.windowimageview.WivDemoActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />
         <activity android:name=".recyclerview.Gallery.GalleryRecyclerActivity"></activity>
+        <activity android:name=".recyclerview.swipecard.demo.SwipeCardActivity"></activity>
     </application>
 
 </manifest>

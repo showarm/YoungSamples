@@ -17,7 +17,7 @@ import info.ipeanut.youngsamples.R;
  *
  * 1 PagerSnapHelper
  *
- *
+ *  // 自定义 https://github.com/rubensousa/RecyclerViewSnap
  */
 public class GalleryRecyclerView extends RecyclerView {
   private int FLING_SPEED = 1000; // 滑动速度

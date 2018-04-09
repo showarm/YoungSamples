@@ -37,7 +37,7 @@ public class GalleryRecyclerActivity extends Activity {
     mRecyclerView.setAdapter(adapter);
     mRecyclerView.initFlingSpeed(9000)                                   // 设置滑动速度（像素/s）
         .initPageParams(0, 60)     // 设置页边距和左右图片的可见宽度，单位dp
-        .setAnimFactor(0.15f)                                   // 设置切换动画的参数因子
+        .setAnimFactor(0.15f)                                 // 设置切换动画的参数因子
         .setAnimType(AnimManager.ANIM_BOTTOM_TO_TOP);            // 设置切换动画类型，目前有AnimManager.ANIM_BOTTOM_TO_TOP和目前有AnimManager.ANIM_TOP_TO_BOTTOM
         //.setOnItemClickListener(this);
 
